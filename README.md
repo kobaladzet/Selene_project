@@ -6,8 +6,6 @@ SELENE is an e-commerce platform specialized in art and paintings. The platform 
 
 ## Project Overview
 
----
-
 *SELENE* features a comprehensive set of functionalities including:
 * User registration and authentication system
 * Art browsing and search capabilities
@@ -24,3 +22,24 @@ Users can search through the artworks. By clicking on each drawing they can find
 * SQLite
 * Beautiful Soup
 * HTML/CSS
+
+## Screenshots
+
+---
+
+![image](https://github.com/user-attachments/assets/e7c432a2-21a5-4da7-9260-ba8ffe366694)
+![image](https://github.com/user-attachments/assets/ad24a148-2509-4c6f-a94e-fc96793ee418)
+![image](https://github.com/user-attachments/assets/7c1e6de9-04d9-4d11-9d5c-cb0de63d7f0f)
+![image](https://github.com/user-attachments/assets/b481b719-ec12-49ac-8adf-190ae6afb12c)
+![image](https://github.com/user-attachments/assets/0e5db49d-0aff-4a89-a0cd-cfc1a1a44da6)
+![image](https://github.com/user-attachments/assets/1e8b32fd-6a48-4b56-b8e7-9950f6d168dc)
+
+Admin interface:
+![image](https://github.com/user-attachments/assets/f748c98f-7607-4896-88c5-4bbeca498fd5)
+![image](https://github.com/user-attachments/assets/f9ffb7a1-96c8-4e0b-98d3-a96a83852f42)
+
+
+
+
+
+
