@@ -1,0 +1,258 @@
+@font-face {
+font-family: 'Flowers Sunday';
+src: url("/static/Flowers Sunday.otf");
+}
+
+body {
+    /*background-color: rgb(68, 119, 66);*/
+    background-image: url("images/back.jpg");
+    background-attachment: fixed;
+}
+
+p {
+    font-family: "Flowers Sunday";
+    color: #bce1f1;
+    font-size: large;
+}
+
+label {
+    font-family: "Flowers Sunday";
+    color: #bce1f1;
+    font-size: medium;
+}
+
+h2,h1 {
+    font-family: "Flowers Sunday";
+    color: #bce1f1;
+    text-align: center;
+}
+
+@media only screen and (min-width: 970px) {
+    .nav-ul {
+        padding: 50px 0;
+        display: flex;
+        position: revert;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    .nav-right {
+        position: absolute;
+        right: 40px
+    }
+}
+.nav-link {
+        text-decoration: none;
+        color: #bce1f1;
+        margin-left: 30px;
+        font-family: "Flowers Sunday";
+        font-size: x-large;
+    }
+
+
+.nav-link:hover {
+    opacity: 50%;
+}
+#title-image{
+    text-align: center;
+    margin-top: 90px;
+}
+#home-img {
+    width: 300px;
+    height: 300px;
+}
+
+#nav {
+    background-color: rgba(28, 8, 61, 0.79);
+    display: flex;
+        position: revert;
+        align-items: center;
+        justify-content: center;
+}
+
+#main-title-text {
+    font-family: "Flowers Sunday";
+    color: #bce1f1;
+    font-size: 50px;
+}
+
+.input {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(41, 12, 87);
+    color: #bce1f1;
+    text-align: center;
+    font-family: "Flowers Sunday";
+    font-size: large;
+    border-radius: 12px;
+    border-color: #bce1f1;
+    &::placeholder{
+        color: #a0becc;
+    }
+}
+textarea {
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: rgb(41, 12, 87);
+    color: #bce1f1;
+    text-align: center;
+    font-family: "Flowers Sunday";
+    font-size: medium;
+    border-radius: 12px;
+    border: #bce1f1 solid 2px ;
+    &::placeholder{
+        color: #a0becc;
+    }
+    margin-bottom: 10px;
+}
+
+.button-go {
+    background-color: rgb(41, 12, 87);
+    color: #bce1f1;
+    font-family: "Flowers Sunday";
+    font-size: large;
+    border: 1px solid #bce1f1;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#button-go:hover {
+    opacity: 80%;
+}
+
+.album-item {
+    margin-bottom: 50px;
+    width: 300px;
+
+}
+.cart-item {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 800px;
+    display: flex;
+    gap: 50px;
+
+    border: 3px solid rgba(2, 0, 5, 0.82);
+    background: rgba(38, 27, 66, 0.82);
+    padding: 10px;
+    border-radius: 20px;
+    img{
+        border-radius: 15px;
+    }
+    input{
+        border: 3px solid #bce1f1;
+        background: #06063f;
+
+    }
+}
+
+
+
+.cart-item img {
+    width: 50%;
+}
+
+
+
+.album-item img {
+    width: 100%;
+}
+
+.album-item:hover {
+    opacity: 80%;
+}
+
+.album-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    grid-auto-rows: auto;
+
+}
+
+
+.album-link {
+    text-decoration: NONE;
+}
+
+.user-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    list-style-type: none;
+    text-align: right;
+    margin: 20px
+}
+
+.user-info-li,
+.user-info-p {
+    font-size: large;
+    margin: 10px 0;
+}
+.user-info-li:hover {
+    opacity: 50%;
+}
+.user-info-li-a {
+    text-decoration: none;
+    color: #bce1f1;
+    font-family: "Flowers Sunday";
+    font-size: medium;
+}
+
+.total-price {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    input{
+        background: #06063f;
+    }
+    p{
+        border: 3px solid rgba(2, 0, 5, 0.82);
+        background: rgba(38, 27, 66, 0.82);
+        padding: 10px;
+        border-radius: 12px;
+        font-size: x-large;
+    }
+    text-align: center;
+
+}
+.errors {
+    color: #de0000;
+    font-family: "Flowers Sunday";
+}
+
+.add-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    text-align: right;
+    height: 70vh; /* Full viewport height */
+    input{
+        border: 3px solid #bce1f1;
+        background: #06063f;
+    }
+    button {
+        border: 3px solid #bce1f1;
+        background: #06063f;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        align-self: center;
+        margin-left: 40%;
+    }
+
+
+}
+#name {
+    margin-bottom: 10px;
+}

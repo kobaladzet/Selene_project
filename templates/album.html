@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-top: 15px">
+<div style="float: left; margin-right: 30px; margin-left: 30px; max-width: 30%;" >
+    <img style="width: 100%;" src="{{ url_for('static', filename='images/drawings/%s' % (collection.image)) }}" />
+
+
+</div>
+
+<div style="margin-left: 20px; display: flex; gap: 20px">
+
+    <div>
+        <p class="album-desc">Title - {{ collection.title }}</p>
+        <p class="album-desc">Artist - {{ collection.artist }}</p>
+        <p class="album-desc">Date - {{ collection.date }}</p>
+        <p class="album-desc">Dimensions - {{ collection.dimensions }}</p>
+        <p class="album-desc">Price - {{ collection.price }}</p>
+        <form style="margin-top: 20px;" method="post">
+                    <input style="width: 200px;" type="submit" class="button-go" value="Buy" name="buy-album">
+                    <input style="width: 200px;" type="submit" class="button-go" value="add to the cart" name="add-album">
+                    {% if user.admin == 1%}
+                    <br>
+                <input style="width:200px;" type="submit" class="button-go" value="Delete" name="delete-album" onclick="return confirm('Are you sure you want to delete this album? This action cannot be undone.')">
+                <input style="width:200px;" type="submit" class="button-go" value="change details" id="change-description-btn" name="change-description">
+                    {%endif%}
+
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <p class="flashes">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    </div>
+
+{% if user.admin == 1%}
+
+     {% if show_edit_form %}
+        <div style="text-align: right; margin-right: 80px; margin-top: 20px; " class="edit-form">
+            <h2>Edit Album Details</h2>
+            <form method="post">
+                <label for="titlee">Title:</label>
+                <input type="text" id="titlee" name="title" value="{{ collection.title }}" class="input" required><br>
+
+                <label for="artist">Artist:</label>
+                <input type="text" id="artist" name="artist" value="{{ collection.artist }}" class="input" required><br>
+
+
+                <label for="date">Date:</label>
+                <input type="text" id="date" name="date" value="{{ collection.date }} " class="input" required><br>
+
+                <label for="dimensions">Dimensions:</label>
+                <input type="text" id="dimensions" name="dimensions" value="{{ collection.dimensions }}" class="input" required><br>
+
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" step="0.01" value="{{ collection.price }}" class="input" required><br>
+                <br>
+                <input type="submit" class="button-go" name="save-changes">Save Changes</input>
+            </form>
+        </div>
+    {% endif %}
+
+
+ {%endif%}
+
+
+</div>
+</div>
+{% endblock %}

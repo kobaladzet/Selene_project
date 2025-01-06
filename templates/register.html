@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="title-image">
+    <form method="post">
+        {{ form.email(class="input", type="email", id="register-email", placeholder="Email") }}<br>
+        {{ form.username(class="input input-middle",  type="text", id="register-username", placeholder="Username") }}<br>
+        {{ form.password(class="input input-middle", type="password", id="register-password", placeholder="Password") }}<br>
+        {{ form.confirm(class="input", type="password", id="register-password-repeat", placeholder="Repeat Password") }}<br><br>
+        {{ form.submit(class="button-go", type="submit", value="Register") }}
+        {% for field, errors in form.errors.items() %}
+            <div class="errors">
+                {{ form[field].label }}: {{ ', '.join(errors) }}
+            </div>
+        {% endfor %}
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <p class="flashes">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <p>Already Have An Account?</p>
+    <p><a class="custom-a" href="{{url_for('login')}}">Log In</a></p>
+</div>
+
+{% endblock %}

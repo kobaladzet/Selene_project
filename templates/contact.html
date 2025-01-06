@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="title-image">
+    <h1>Contact us</h1>
+    <form method="post" style="padding: 10px">
+        <input type="text" class="input" placeholder="Name" name="name" id="name" required><br>
+        <input type="email" class="input" placeholder="Email" name="email" required><br>
+        <textarea placeholder="type email here" name="message" required></textarea><br>
+        <input type="submit" class="button-go" value="send">
+
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <p class="flashes">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+{% endblock %}

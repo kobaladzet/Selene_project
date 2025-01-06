@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="cart-container">
+
+    <form style="margin-top: 20px; text-align: center">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flashes" >
+                    {% for message in messages %}
+                        <p style="color: maroon">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </form>
+
+
+    {% for collection in collections %}
+        <div class="cart-item">
+            <img src="{{ url_for('static', filename='images/drawings/%s' % (collection.image)) }}" />
+            <div>
+            <p class="album-title">title - {{ collection.title }}</p>
+            <p class="album-artist">artist - {{ collection.artist }}</p>
+            <p class="album-price">price - {{ collection.price }}</p>
+            <p class="album-price">date - {{ collection.date }}</p>
+            <p class="album-price">dimensions - {{ collection.dimensions }}</p>
+
+            <form style="margin-top: 20px;" method="post">
+
+                        <input style="width: 100px;" type="submit" class="button-go" value="Buy" name="buy-album">
+                        <input style="width: 100px;" type="submit" class="button-go" value="Remove" name="remove-album">
+                        <input type="hidden" name="album_id" value="{{ collection.id }}">
+                        <input type="hidden" name="album_title" value="{{ collection.title }}">
+            </form>
+
+            </div>
+
+
+
+
+        </div>
+
+    {% else %}
+        <p style="font-size: xx-large; text-align: center; margin-top: 100px;">No Items in the cart</p>
+
+
+    {% endfor %}
+
+    {%if total != 0 %}
+    <form method="post">
+        <div class="total-price">
+            <p>total price: {{ total }}</p>
+            <input style="width: 100px;" type="submit" class="button-go" value="Buy all" name="buy-all">
+        </div>
+    </form>
+
+    {%endif%}
+
+
+
+
+</div>
+
+{% endblock %}

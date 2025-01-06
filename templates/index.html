@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="title-image">
+     <img id="home-img" src="/static/images/logo.png" />
+     <h1 id="main-title-text">Selene</h1>
+     <form method="post">
+        <input name="search-form"  type="text" class="input" id="search-main" placeholder="Search"><br><br>
+        <input type="submit" class="button-go" value="Go" id="button-go">
+     </form>
+</div>
+<ul class="user-info">
+                <li class="user-info-p">
+                    {% if "username" in session %}
+                        <p class="user-info-li-a">User:<br>{{session["username"]}}</p>
+                        {% else %}
+                        <p class="user-info-li-a">User:<br>Guest<br>(Not Logged In)</p>
+                    {% endif %}
+                </li>
+                {% if "date" in session %}
+                <li class="user-info-p">
+                        <p class="user-info-li-a"><br>Member Since:<br>{{session["date"]}}</p>
+                </li>
+                {% endif %}
+            </ul>
+{% endblock %}

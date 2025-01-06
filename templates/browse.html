@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+<form method="post" id="browse-search">
+    <input  style="margin-top: 20px;" name="search-form"  type="text" class="input" placeholder="Search">
+    <input style="margin-left: 15px;" type="submit" class="button-go" value="Go" id="button-go" name="search-button">
+</form>
+{% if user.admin == 1 %}
+{% if query == "" %}
+
+<form style="text-align: center" method="post">
+    <button type="submit" class="button-go" name="add-file">Add Drawing</button>
+
+</form>
+
+{% endif %}
+{% endif %}
+</div>
+
+<div class="album-container">
+
+    {% for collection in collections %}
+        <a class="album-link" href="/browse/{{collection.title}}/{{collection.id}}">
+            <div class="album-item">
+                <img src="{{ url_for('static', filename='images/drawings/%s' % (collection.image)) }}" />
+                <p class="album-title">{{ collection.title }}</p>
+                <p class="album-artist">{{ collection.artist }}</p>
+            </div>
+        </a>
+    {% else %}
+        <p style="position: absolute; left: 40%; font-size: xx-large; margin-top: 100px;">No Results Found</p>
+    {% endfor %}
+
+</div>
+{% endblock %}
