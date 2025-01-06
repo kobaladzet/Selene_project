@@ -1,0 +1,2 @@
+**SELENE**
+SELENE is an e-commerce platform specialized in art and paintings. The platform serves as a digital marketplace where art enthusiasts can browse, explore, and purchase artwork in a sophisticated and user-friendly environment. This project was developed as part of the final examination requirement, implementing full-stack web development principles. All artworks are scrapped from daraba.art web-site.
