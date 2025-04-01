@@ -14,7 +14,7 @@ db = SQLAlchemy()
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.static_folder = 'static'
-app.secret_key = "chamachveniarsobisa"
+app.secret_key = "randomstatement"
 db.init_app(app)
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
@@ -31,8 +31,8 @@ def allowed_file(filename):
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = "selene.contactus@gmail.com"  # Your Gmail address
-app.config["MAIL_PASSWORD"] = "jjyh bwjs fmsx enzx"    # App password (see below)
+app.config["MAIL_USERNAME"] = "selene.contactus@gmail.com"  # Gmail address
+app.config["MAIL_PASSWORD"] = "jjyh bwjs fmsx enzx"    
 app.config["MAIL_DEBUG"] = True
 
 mail = Mail(app)
